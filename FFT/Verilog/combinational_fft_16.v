@@ -33,7 +33,7 @@ stage_reg_bank Reg_Bank_S1 (
 //STage 2
 wire signed [15:0] Y_S2_R [0:15]; 
 wire signed [15:0] Y_S2_I [0:15]; 
-wire signed [15:0] X_S2_R [0:15]; 
+wire signed [15:0] X_S2_R [0:15]; \
 wire signed [15:0] X_S2_I [0:15];
 wire signed [15:0] inter_stage2_real [0:15];
 wire signed [15:0] inter_stage2_img [0:15];

@@ -6,7 +6,7 @@ module fir_datapath( // defining module as a blackbox
     input wire [7:0] i_coeff_data,
     input wire [7:0] i_data,
     output wire [31:0] o_data,
-    output wire [127:0] o_debug_products_visible // <-- ADD THIS PORT
+    output wire [127:0] o_debug_products_visible 
 );
 
 reg signed [7:0] h_n [7:0];

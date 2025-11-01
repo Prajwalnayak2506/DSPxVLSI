@@ -1,0 +1,3069 @@
+$date
+	Sat Nov  1 16:29:23 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module cordic_tb $end
+$scope module DUT $end
+$var wire 16 ! X_init [15:0] $end
+$var wire 16 " Y_init [15:0] $end
+$var wire 1 # clk $end
+$var wire 16 $ cosine [15:0] $end
+$var wire 1 % i_valid $end
+$var wire 1 & reset_n $end
+$var wire 1 ' resetter $end
+$var wire 1 ( sigma $end
+$var wire 16 ) sine [15:0] $end
+$var wire 1 * start_counter_en $end
+$var wire 16 + theta [15:0] $end
+$var wire 16 , x_next [15:0] $end
+$var wire 16 - y_next [15:0] $end
+$var wire 16 . z_next [15:0] $end
+$var wire 16 / z_sub_sum [15:0] $end
+$var wire 16 0 z_add_sum [15:0] $end
+$var wire 16 1 y_sub_sum [15:0] $end
+$var wire 16 2 y_add_sum [15:0] $end
+$var wire 16 3 x_sub_sum [15:0] $end
+$var wire 16 4 x_add_sum [15:0] $end
+$var wire 1 5 theta_modified $end
+$var wire 1 6 sin_sign $end
+$var wire 1 7 sigma_bar $end
+$var wire 16 8 shifted_y [15:0] $end
+$var wire 16 9 shifted_x [15:0] $end
+$var wire 1 : o_valid $end
+$var wire 2 ; next_state [1:0] $end
+$var wire 4 < i [3:0] $end
+$var wire 16 = final_y [15:0] $end
+$var wire 16 > final_x [15:0] $end
+$var wire 1 ? done $end
+$var wire 1 @ cos_sign $end
+$var wire 16 A alpha_value [15:0] $end
+$var wire 16 B Z_init [15:0] $end
+$var reg 2 C current_state [1:0] $end
+$var reg 16 D x_reg [15:0] $end
+$var reg 16 E y_reg [15:0] $end
+$var reg 16 F z_reg [15:0] $end
+$scope module consts $end
+$var wire 4 G i [3:0] $end
+$var reg 16 H alpha_i [15:0] $end
+$upscope $end
+$scope module counter1 $end
+$var wire 1 # clk $end
+$var wire 1 ? done $end
+$var wire 1 I next_count_0 $end
+$var wire 1 J next_count_1 $end
+$var wire 1 K next_count_2 $end
+$var wire 1 L next_count_3 $end
+$var wire 1 ' rst_n $end
+$var wire 1 * start $end
+$var reg 1 M counting_active $end
+$var reg 4 N iteration_count [3:0] $end
+$upscope $end
+$scope module ksa_x_add $end
+$var wire 16 O A [15:0] $end
+$var wire 16 P B [15:0] $end
+$var wire 1 Q CIN $end
+$var wire 1 R COUT $end
+$var wire 32 S props_and_gens [31:0] $end
+$var wire 32 T layer4 [31:0] $end
+$var wire 32 U layer3 [31:0] $end
+$var wire 32 V layer2 [31:0] $end
+$var wire 32 W layer1 [31:0] $end
+$var wire 16 X carry [15:0] $end
+$var wire 16 Y Y [15:0] $end
+$scope function PG_init_generator $end
+$var reg 1 Z A_i $end
+$var reg 1 [ B_i $end
+$var reg 1 \ G $end
+$var reg 1 ] P $end
+$var reg 2 ^ PG_init_generator [1:0] $end
+$upscope $end
+$scope function PG_inter_generator $end
+$var reg 1 _ G $end
+$var reg 1 ` G_pres $end
+$var reg 1 a G_prev $end
+$var reg 1 b P $end
+$var reg 2 c PG_inter_generator [1:0] $end
+$var reg 1 d P_pres $end
+$var reg 1 e P_prev $end
+$upscope $end
+$scope begin genblk1[0] $end
+$upscope $end
+$scope begin genblk1[1] $end
+$upscope $end
+$scope begin genblk1[2] $end
+$upscope $end
+$scope begin genblk1[3] $end
+$upscope $end
+$scope begin genblk1[4] $end
+$upscope $end
+$scope begin genblk1[5] $end
+$upscope $end
+$scope begin genblk1[6] $end
+$upscope $end
+$scope begin genblk1[7] $end
+$upscope $end
+$scope begin genblk1[8] $end
+$upscope $end
+$scope begin genblk1[9] $end
+$upscope $end
+$scope begin genblk1[10] $end
+$upscope $end
+$scope begin genblk1[11] $end
+$upscope $end
+$scope begin genblk1[12] $end
+$upscope $end
+$scope begin genblk1[13] $end
+$upscope $end
+$scope begin genblk1[14] $end
+$upscope $end
+$scope begin genblk1[15] $end
+$upscope $end
+$scope begin genblk10[1] $end
+$upscope $end
+$scope begin genblk10[2] $end
+$upscope $end
+$scope begin genblk10[3] $end
+$upscope $end
+$scope begin genblk10[4] $end
+$upscope $end
+$scope begin genblk10[5] $end
+$upscope $end
+$scope begin genblk10[6] $end
+$upscope $end
+$scope begin genblk10[7] $end
+$upscope $end
+$scope begin genblk10[8] $end
+$upscope $end
+$scope begin genblk10[9] $end
+$upscope $end
+$scope begin genblk10[10] $end
+$upscope $end
+$scope begin genblk10[11] $end
+$upscope $end
+$scope begin genblk10[12] $end
+$upscope $end
+$scope begin genblk10[13] $end
+$upscope $end
+$scope begin genblk10[14] $end
+$upscope $end
+$scope begin genblk10[15] $end
+$upscope $end
+$scope begin genblk11[0] $end
+$upscope $end
+$scope begin genblk11[1] $end
+$upscope $end
+$scope begin genblk11[2] $end
+$upscope $end
+$scope begin genblk11[3] $end
+$upscope $end
+$scope begin genblk11[4] $end
+$upscope $end
+$scope begin genblk11[5] $end
+$upscope $end
+$scope begin genblk11[6] $end
+$upscope $end
+$scope begin genblk11[7] $end
+$upscope $end
+$scope begin genblk11[8] $end
+$upscope $end
+$scope begin genblk11[9] $end
+$upscope $end
+$scope begin genblk11[10] $end
+$upscope $end
+$scope begin genblk11[11] $end
+$upscope $end
+$scope begin genblk11[12] $end
+$upscope $end
+$scope begin genblk11[13] $end
+$upscope $end
+$scope begin genblk11[14] $end
+$upscope $end
+$scope begin genblk11[15] $end
+$upscope $end
+$scope begin genblk2[0] $end
+$upscope $end
+$scope begin genblk3[1] $end
+$upscope $end
+$scope begin genblk3[2] $end
+$upscope $end
+$scope begin genblk3[3] $end
+$upscope $end
+$scope begin genblk3[4] $end
+$upscope $end
+$scope begin genblk3[5] $end
+$upscope $end
+$scope begin genblk3[6] $end
+$upscope $end
+$scope begin genblk3[7] $end
+$upscope $end
+$scope begin genblk3[8] $end
+$upscope $end
+$scope begin genblk3[9] $end
+$upscope $end
+$scope begin genblk3[10] $end
+$upscope $end
+$scope begin genblk3[11] $end
+$upscope $end
+$scope begin genblk3[12] $end
+$upscope $end
+$scope begin genblk3[13] $end
+$upscope $end
+$scope begin genblk3[14] $end
+$upscope $end
+$scope begin genblk3[15] $end
+$upscope $end
+$scope begin genblk4[0] $end
+$upscope $end
+$scope begin genblk4[1] $end
+$upscope $end
+$scope begin genblk5[2] $end
+$upscope $end
+$scope begin genblk5[3] $end
+$upscope $end
+$scope begin genblk5[4] $end
+$upscope $end
+$scope begin genblk5[5] $end
+$upscope $end
+$scope begin genblk5[6] $end
+$upscope $end
+$scope begin genblk5[7] $end
+$upscope $end
+$scope begin genblk5[8] $end
+$upscope $end
+$scope begin genblk5[9] $end
+$upscope $end
+$scope begin genblk5[10] $end
+$upscope $end
+$scope begin genblk5[11] $end
+$upscope $end
+$scope begin genblk5[12] $end
+$upscope $end
+$scope begin genblk5[13] $end
+$upscope $end
+$scope begin genblk5[14] $end
+$upscope $end
+$scope begin genblk5[15] $end
+$upscope $end
+$scope begin genblk6[0] $end
+$upscope $end
+$scope begin genblk6[1] $end
+$upscope $end
+$scope begin genblk6[2] $end
+$upscope $end
+$scope begin genblk6[3] $end
+$upscope $end
+$scope begin genblk7[4] $end
+$upscope $end
+$scope begin genblk7[5] $end
+$upscope $end
+$scope begin genblk7[6] $end
+$upscope $end
+$scope begin genblk7[7] $end
+$upscope $end
+$scope begin genblk7[8] $end
+$upscope $end
+$scope begin genblk7[9] $end
+$upscope $end
+$scope begin genblk7[10] $end
+$upscope $end
+$scope begin genblk7[11] $end
+$upscope $end
+$scope begin genblk7[12] $end
+$upscope $end
+$scope begin genblk7[13] $end
+$upscope $end
+$scope begin genblk7[14] $end
+$upscope $end
+$scope begin genblk7[15] $end
+$upscope $end
+$scope begin genblk8[0] $end
+$upscope $end
+$scope begin genblk8[1] $end
+$upscope $end
+$scope begin genblk8[2] $end
+$upscope $end
+$scope begin genblk8[3] $end
+$upscope $end
+$scope begin genblk8[4] $end
+$upscope $end
+$scope begin genblk8[5] $end
+$upscope $end
+$scope begin genblk8[6] $end
+$upscope $end
+$scope begin genblk8[7] $end
+$upscope $end
+$scope begin genblk9[8] $end
+$upscope $end
+$scope begin genblk9[9] $end
+$upscope $end
+$scope begin genblk9[10] $end
+$upscope $end
+$scope begin genblk9[11] $end
+$upscope $end
+$scope begin genblk9[12] $end
+$upscope $end
+$scope begin genblk9[13] $end
+$upscope $end
+$scope begin genblk9[14] $end
+$upscope $end
+$scope begin genblk9[15] $end
+$upscope $end
+$upscope $end
+$scope module ksa_x_sub $end
+$var wire 16 f A [15:0] $end
+$var wire 16 g B [15:0] $end
+$var wire 1 h CIN $end
+$var wire 1 i COUT $end
+$var wire 32 j props_and_gens [31:0] $end
+$var wire 32 k layer4 [31:0] $end
+$var wire 32 l layer3 [31:0] $end
+$var wire 32 m layer2 [31:0] $end
+$var wire 32 n layer1 [31:0] $end
+$var wire 16 o carry [15:0] $end
+$var wire 16 p Y [15:0] $end
+$scope function PG_init_generator $end
+$var reg 1 q A_i $end
+$var reg 1 r B_i $end
+$var reg 1 s G $end
+$var reg 1 t P $end
+$var reg 2 u PG_init_generator [1:0] $end
+$upscope $end
+$scope function PG_inter_generator $end
+$var reg 1 v G $end
+$var reg 1 w G_pres $end
+$var reg 1 x G_prev $end
+$var reg 1 y P $end
+$var reg 2 z PG_inter_generator [1:0] $end
+$var reg 1 { P_pres $end
+$var reg 1 | P_prev $end
+$upscope $end
+$scope begin genblk1[0] $end
+$upscope $end
+$scope begin genblk1[1] $end
+$upscope $end
+$scope begin genblk1[2] $end
+$upscope $end
+$scope begin genblk1[3] $end
+$upscope $end
+$scope begin genblk1[4] $end
+$upscope $end
+$scope begin genblk1[5] $end
+$upscope $end
+$scope begin genblk1[6] $end
+$upscope $end
+$scope begin genblk1[7] $end
+$upscope $end
+$scope begin genblk1[8] $end
+$upscope $end
+$scope begin genblk1[9] $end
+$upscope $end
+$scope begin genblk1[10] $end
+$upscope $end
+$scope begin genblk1[11] $end
+$upscope $end
+$scope begin genblk1[12] $end
+$upscope $end
+$scope begin genblk1[13] $end
+$upscope $end
+$scope begin genblk1[14] $end
+$upscope $end
+$scope begin genblk1[15] $end
+$upscope $end
+$scope begin genblk10[1] $end
+$upscope $end
+$scope begin genblk10[2] $end
+$upscope $end
+$scope begin genblk10[3] $end
+$upscope $end
+$scope begin genblk10[4] $end
+$upscope $end
+$scope begin genblk10[5] $end
+$upscope $end
+$scope begin genblk10[6] $end
+$upscope $end
+$scope begin genblk10[7] $end
+$upscope $end
+$scope begin genblk10[8] $end
+$upscope $end
+$scope begin genblk10[9] $end
+$upscope $end
+$scope begin genblk10[10] $end
+$upscope $end
+$scope begin genblk10[11] $end
+$upscope $end
+$scope begin genblk10[12] $end
+$upscope $end
+$scope begin genblk10[13] $end
+$upscope $end
+$scope begin genblk10[14] $end
+$upscope $end
+$scope begin genblk10[15] $end
+$upscope $end
+$scope begin genblk11[0] $end
+$upscope $end
+$scope begin genblk11[1] $end
+$upscope $end
+$scope begin genblk11[2] $end
+$upscope $end
+$scope begin genblk11[3] $end
+$upscope $end
+$scope begin genblk11[4] $end
+$upscope $end
+$scope begin genblk11[5] $end
+$upscope $end
+$scope begin genblk11[6] $end
+$upscope $end
+$scope begin genblk11[7] $end
+$upscope $end
+$scope begin genblk11[8] $end
+$upscope $end
+$scope begin genblk11[9] $end
+$upscope $end
+$scope begin genblk11[10] $end
+$upscope $end
+$scope begin genblk11[11] $end
+$upscope $end
+$scope begin genblk11[12] $end
+$upscope $end
+$scope begin genblk11[13] $end
+$upscope $end
+$scope begin genblk11[14] $end
+$upscope $end
+$scope begin genblk11[15] $end
+$upscope $end
+$scope begin genblk2[0] $end
+$upscope $end
+$scope begin genblk3[1] $end
+$upscope $end
+$scope begin genblk3[2] $end
+$upscope $end
+$scope begin genblk3[3] $end
+$upscope $end
+$scope begin genblk3[4] $end
+$upscope $end
+$scope begin genblk3[5] $end
+$upscope $end
+$scope begin genblk3[6] $end
+$upscope $end
+$scope begin genblk3[7] $end
+$upscope $end
+$scope begin genblk3[8] $end
+$upscope $end
+$scope begin genblk3[9] $end
+$upscope $end
+$scope begin genblk3[10] $end
+$upscope $end
+$scope begin genblk3[11] $end
+$upscope $end
+$scope begin genblk3[12] $end
+$upscope $end
+$scope begin genblk3[13] $end
+$upscope $end
+$scope begin genblk3[14] $end
+$upscope $end
+$scope begin genblk3[15] $end
+$upscope $end
+$scope begin genblk4[0] $end
+$upscope $end
+$scope begin genblk4[1] $end
+$upscope $end
+$scope begin genblk5[2] $end
+$upscope $end
+$scope begin genblk5[3] $end
+$upscope $end
+$scope begin genblk5[4] $end
+$upscope $end
+$scope begin genblk5[5] $end
+$upscope $end
+$scope begin genblk5[6] $end
+$upscope $end
+$scope begin genblk5[7] $end
+$upscope $end
+$scope begin genblk5[8] $end
+$upscope $end
+$scope begin genblk5[9] $end
+$upscope $end
+$scope begin genblk5[10] $end
+$upscope $end
+$scope begin genblk5[11] $end
+$upscope $end
+$scope begin genblk5[12] $end
+$upscope $end
+$scope begin genblk5[13] $end
+$upscope $end
+$scope begin genblk5[14] $end
+$upscope $end
+$scope begin genblk5[15] $end
+$upscope $end
+$scope begin genblk6[0] $end
+$upscope $end
+$scope begin genblk6[1] $end
+$upscope $end
+$scope begin genblk6[2] $end
+$upscope $end
+$scope begin genblk6[3] $end
+$upscope $end
+$scope begin genblk7[4] $end
+$upscope $end
+$scope begin genblk7[5] $end
+$upscope $end
+$scope begin genblk7[6] $end
+$upscope $end
+$scope begin genblk7[7] $end
+$upscope $end
+$scope begin genblk7[8] $end
+$upscope $end
+$scope begin genblk7[9] $end
+$upscope $end
+$scope begin genblk7[10] $end
+$upscope $end
+$scope begin genblk7[11] $end
+$upscope $end
+$scope begin genblk7[12] $end
+$upscope $end
+$scope begin genblk7[13] $end
+$upscope $end
+$scope begin genblk7[14] $end
+$upscope $end
+$scope begin genblk7[15] $end
+$upscope $end
+$scope begin genblk8[0] $end
+$upscope $end
+$scope begin genblk8[1] $end
+$upscope $end
+$scope begin genblk8[2] $end
+$upscope $end
+$scope begin genblk8[3] $end
+$upscope $end
+$scope begin genblk8[4] $end
+$upscope $end
+$scope begin genblk8[5] $end
+$upscope $end
+$scope begin genblk8[6] $end
+$upscope $end
+$scope begin genblk8[7] $end
+$upscope $end
+$scope begin genblk9[8] $end
+$upscope $end
+$scope begin genblk9[9] $end
+$upscope $end
+$scope begin genblk9[10] $end
+$upscope $end
+$scope begin genblk9[11] $end
+$upscope $end
+$scope begin genblk9[12] $end
+$upscope $end
+$scope begin genblk9[13] $end
+$upscope $end
+$scope begin genblk9[14] $end
+$upscope $end
+$scope begin genblk9[15] $end
+$upscope $end
+$upscope $end
+$scope module ksa_y_add $end
+$var wire 16 } A [15:0] $end
+$var wire 16 ~ B [15:0] $end
+$var wire 1 !" CIN $end
+$var wire 1 "" COUT $end
+$var wire 32 #" props_and_gens [31:0] $end
+$var wire 32 $" layer4 [31:0] $end
+$var wire 32 %" layer3 [31:0] $end
+$var wire 32 &" layer2 [31:0] $end
+$var wire 32 '" layer1 [31:0] $end
+$var wire 16 (" carry [15:0] $end
+$var wire 16 )" Y [15:0] $end
+$scope function PG_init_generator $end
+$var reg 1 *" A_i $end
+$var reg 1 +" B_i $end
+$var reg 1 ," G $end
+$var reg 1 -" P $end
+$var reg 2 ." PG_init_generator [1:0] $end
+$upscope $end
+$scope function PG_inter_generator $end
+$var reg 1 /" G $end
+$var reg 1 0" G_pres $end
+$var reg 1 1" G_prev $end
+$var reg 1 2" P $end
+$var reg 2 3" PG_inter_generator [1:0] $end
+$var reg 1 4" P_pres $end
+$var reg 1 5" P_prev $end
+$upscope $end
+$scope begin genblk1[0] $end
+$upscope $end
+$scope begin genblk1[1] $end
+$upscope $end
+$scope begin genblk1[2] $end
+$upscope $end
+$scope begin genblk1[3] $end
+$upscope $end
+$scope begin genblk1[4] $end
+$upscope $end
+$scope begin genblk1[5] $end
+$upscope $end
+$scope begin genblk1[6] $end
+$upscope $end
+$scope begin genblk1[7] $end
+$upscope $end
+$scope begin genblk1[8] $end
+$upscope $end
+$scope begin genblk1[9] $end
+$upscope $end
+$scope begin genblk1[10] $end
+$upscope $end
+$scope begin genblk1[11] $end
+$upscope $end
+$scope begin genblk1[12] $end
+$upscope $end
+$scope begin genblk1[13] $end
+$upscope $end
+$scope begin genblk1[14] $end
+$upscope $end
+$scope begin genblk1[15] $end
+$upscope $end
+$scope begin genblk10[1] $end
+$upscope $end
+$scope begin genblk10[2] $end
+$upscope $end
+$scope begin genblk10[3] $end
+$upscope $end
+$scope begin genblk10[4] $end
+$upscope $end
+$scope begin genblk10[5] $end
+$upscope $end
+$scope begin genblk10[6] $end
+$upscope $end
+$scope begin genblk10[7] $end
+$upscope $end
+$scope begin genblk10[8] $end
+$upscope $end
+$scope begin genblk10[9] $end
+$upscope $end
+$scope begin genblk10[10] $end
+$upscope $end
+$scope begin genblk10[11] $end
+$upscope $end
+$scope begin genblk10[12] $end
+$upscope $end
+$scope begin genblk10[13] $end
+$upscope $end
+$scope begin genblk10[14] $end
+$upscope $end
+$scope begin genblk10[15] $end
+$upscope $end
+$scope begin genblk11[0] $end
+$upscope $end
+$scope begin genblk11[1] $end
+$upscope $end
+$scope begin genblk11[2] $end
+$upscope $end
+$scope begin genblk11[3] $end
+$upscope $end
+$scope begin genblk11[4] $end
+$upscope $end
+$scope begin genblk11[5] $end
+$upscope $end
+$scope begin genblk11[6] $end
+$upscope $end
+$scope begin genblk11[7] $end
+$upscope $end
+$scope begin genblk11[8] $end
+$upscope $end
+$scope begin genblk11[9] $end
+$upscope $end
+$scope begin genblk11[10] $end
+$upscope $end
+$scope begin genblk11[11] $end
+$upscope $end
+$scope begin genblk11[12] $end
+$upscope $end
+$scope begin genblk11[13] $end
+$upscope $end
+$scope begin genblk11[14] $end
+$upscope $end
+$scope begin genblk11[15] $end
+$upscope $end
+$scope begin genblk2[0] $end
+$upscope $end
+$scope begin genblk3[1] $end
+$upscope $end
+$scope begin genblk3[2] $end
+$upscope $end
+$scope begin genblk3[3] $end
+$upscope $end
+$scope begin genblk3[4] $end
+$upscope $end
+$scope begin genblk3[5] $end
+$upscope $end
+$scope begin genblk3[6] $end
+$upscope $end
+$scope begin genblk3[7] $end
+$upscope $end
+$scope begin genblk3[8] $end
+$upscope $end
+$scope begin genblk3[9] $end
+$upscope $end
+$scope begin genblk3[10] $end
+$upscope $end
+$scope begin genblk3[11] $end
+$upscope $end
+$scope begin genblk3[12] $end
+$upscope $end
+$scope begin genblk3[13] $end
+$upscope $end
+$scope begin genblk3[14] $end
+$upscope $end
+$scope begin genblk3[15] $end
+$upscope $end
+$scope begin genblk4[0] $end
+$upscope $end
+$scope begin genblk4[1] $end
+$upscope $end
+$scope begin genblk5[2] $end
+$upscope $end
+$scope begin genblk5[3] $end
+$upscope $end
+$scope begin genblk5[4] $end
+$upscope $end
+$scope begin genblk5[5] $end
+$upscope $end
+$scope begin genblk5[6] $end
+$upscope $end
+$scope begin genblk5[7] $end
+$upscope $end
+$scope begin genblk5[8] $end
+$upscope $end
+$scope begin genblk5[9] $end
+$upscope $end
+$scope begin genblk5[10] $end
+$upscope $end
+$scope begin genblk5[11] $end
+$upscope $end
+$scope begin genblk5[12] $end
+$upscope $end
+$scope begin genblk5[13] $end
+$upscope $end
+$scope begin genblk5[14] $end
+$upscope $end
+$scope begin genblk5[15] $end
+$upscope $end
+$scope begin genblk6[0] $end
+$upscope $end
+$scope begin genblk6[1] $end
+$upscope $end
+$scope begin genblk6[2] $end
+$upscope $end
+$scope begin genblk6[3] $end
+$upscope $end
+$scope begin genblk7[4] $end
+$upscope $end
+$scope begin genblk7[5] $end
+$upscope $end
+$scope begin genblk7[6] $end
+$upscope $end
+$scope begin genblk7[7] $end
+$upscope $end
+$scope begin genblk7[8] $end
+$upscope $end
+$scope begin genblk7[9] $end
+$upscope $end
+$scope begin genblk7[10] $end
+$upscope $end
+$scope begin genblk7[11] $end
+$upscope $end
+$scope begin genblk7[12] $end
+$upscope $end
+$scope begin genblk7[13] $end
+$upscope $end
+$scope begin genblk7[14] $end
+$upscope $end
+$scope begin genblk7[15] $end
+$upscope $end
+$scope begin genblk8[0] $end
+$upscope $end
+$scope begin genblk8[1] $end
+$upscope $end
+$scope begin genblk8[2] $end
+$upscope $end
+$scope begin genblk8[3] $end
+$upscope $end
+$scope begin genblk8[4] $end
+$upscope $end
+$scope begin genblk8[5] $end
+$upscope $end
+$scope begin genblk8[6] $end
+$upscope $end
+$scope begin genblk8[7] $end
+$upscope $end
+$scope begin genblk9[8] $end
+$upscope $end
+$scope begin genblk9[9] $end
+$upscope $end
+$scope begin genblk9[10] $end
+$upscope $end
+$scope begin genblk9[11] $end
+$upscope $end
+$scope begin genblk9[12] $end
+$upscope $end
+$scope begin genblk9[13] $end
+$upscope $end
+$scope begin genblk9[14] $end
+$upscope $end
+$scope begin genblk9[15] $end
+$upscope $end
+$upscope $end
+$scope module ksa_y_sub $end
+$var wire 16 6" A [15:0] $end
+$var wire 16 7" B [15:0] $end
+$var wire 1 8" CIN $end
+$var wire 1 9" COUT $end
+$var wire 32 :" props_and_gens [31:0] $end
+$var wire 32 ;" layer4 [31:0] $end
+$var wire 32 <" layer3 [31:0] $end
+$var wire 32 =" layer2 [31:0] $end
+$var wire 32 >" layer1 [31:0] $end
+$var wire 16 ?" carry [15:0] $end
+$var wire 16 @" Y [15:0] $end
+$scope function PG_init_generator $end
+$var reg 1 A" A_i $end
+$var reg 1 B" B_i $end
+$var reg 1 C" G $end
+$var reg 1 D" P $end
+$var reg 2 E" PG_init_generator [1:0] $end
+$upscope $end
+$scope function PG_inter_generator $end
+$var reg 1 F" G $end
+$var reg 1 G" G_pres $end
+$var reg 1 H" G_prev $end
+$var reg 1 I" P $end
+$var reg 2 J" PG_inter_generator [1:0] $end
+$var reg 1 K" P_pres $end
+$var reg 1 L" P_prev $end
+$upscope $end
+$scope begin genblk1[0] $end
+$upscope $end
+$scope begin genblk1[1] $end
+$upscope $end
+$scope begin genblk1[2] $end
+$upscope $end
+$scope begin genblk1[3] $end
+$upscope $end
+$scope begin genblk1[4] $end
+$upscope $end
+$scope begin genblk1[5] $end
+$upscope $end
+$scope begin genblk1[6] $end
+$upscope $end
+$scope begin genblk1[7] $end
+$upscope $end
+$scope begin genblk1[8] $end
+$upscope $end
+$scope begin genblk1[9] $end
+$upscope $end
+$scope begin genblk1[10] $end
+$upscope $end
+$scope begin genblk1[11] $end
+$upscope $end
+$scope begin genblk1[12] $end
+$upscope $end
+$scope begin genblk1[13] $end
+$upscope $end
+$scope begin genblk1[14] $end
+$upscope $end
+$scope begin genblk1[15] $end
+$upscope $end
+$scope begin genblk10[1] $end
+$upscope $end
+$scope begin genblk10[2] $end
+$upscope $end
+$scope begin genblk10[3] $end
+$upscope $end
+$scope begin genblk10[4] $end
+$upscope $end
+$scope begin genblk10[5] $end
+$upscope $end
+$scope begin genblk10[6] $end
+$upscope $end
+$scope begin genblk10[7] $end
+$upscope $end
+$scope begin genblk10[8] $end
+$upscope $end
+$scope begin genblk10[9] $end
+$upscope $end
+$scope begin genblk10[10] $end
+$upscope $end
+$scope begin genblk10[11] $end
+$upscope $end
+$scope begin genblk10[12] $end
+$upscope $end
+$scope begin genblk10[13] $end
+$upscope $end
+$scope begin genblk10[14] $end
+$upscope $end
+$scope begin genblk10[15] $end
+$upscope $end
+$scope begin genblk11[0] $end
+$upscope $end
+$scope begin genblk11[1] $end
+$upscope $end
+$scope begin genblk11[2] $end
+$upscope $end
+$scope begin genblk11[3] $end
+$upscope $end
+$scope begin genblk11[4] $end
+$upscope $end
+$scope begin genblk11[5] $end
+$upscope $end
+$scope begin genblk11[6] $end
+$upscope $end
+$scope begin genblk11[7] $end
+$upscope $end
+$scope begin genblk11[8] $end
+$upscope $end
+$scope begin genblk11[9] $end
+$upscope $end
+$scope begin genblk11[10] $end
+$upscope $end
+$scope begin genblk11[11] $end
+$upscope $end
+$scope begin genblk11[12] $end
+$upscope $end
+$scope begin genblk11[13] $end
+$upscope $end
+$scope begin genblk11[14] $end
+$upscope $end
+$scope begin genblk11[15] $end
+$upscope $end
+$scope begin genblk2[0] $end
+$upscope $end
+$scope begin genblk3[1] $end
+$upscope $end
+$scope begin genblk3[2] $end
+$upscope $end
+$scope begin genblk3[3] $end
+$upscope $end
+$scope begin genblk3[4] $end
+$upscope $end
+$scope begin genblk3[5] $end
+$upscope $end
+$scope begin genblk3[6] $end
+$upscope $end
+$scope begin genblk3[7] $end
+$upscope $end
+$scope begin genblk3[8] $end
+$upscope $end
+$scope begin genblk3[9] $end
+$upscope $end
+$scope begin genblk3[10] $end
+$upscope $end
+$scope begin genblk3[11] $end
+$upscope $end
+$scope begin genblk3[12] $end
+$upscope $end
+$scope begin genblk3[13] $end
+$upscope $end
+$scope begin genblk3[14] $end
+$upscope $end
+$scope begin genblk3[15] $end
+$upscope $end
+$scope begin genblk4[0] $end
+$upscope $end
+$scope begin genblk4[1] $end
+$upscope $end
+$scope begin genblk5[2] $end
+$upscope $end
+$scope begin genblk5[3] $end
+$upscope $end
+$scope begin genblk5[4] $end
+$upscope $end
+$scope begin genblk5[5] $end
+$upscope $end
+$scope begin genblk5[6] $end
+$upscope $end
+$scope begin genblk5[7] $end
+$upscope $end
+$scope begin genblk5[8] $end
+$upscope $end
+$scope begin genblk5[9] $end
+$upscope $end
+$scope begin genblk5[10] $end
+$upscope $end
+$scope begin genblk5[11] $end
+$upscope $end
+$scope begin genblk5[12] $end
+$upscope $end
+$scope begin genblk5[13] $end
+$upscope $end
+$scope begin genblk5[14] $end
+$upscope $end
+$scope begin genblk5[15] $end
+$upscope $end
+$scope begin genblk6[0] $end
+$upscope $end
+$scope begin genblk6[1] $end
+$upscope $end
+$scope begin genblk6[2] $end
+$upscope $end
+$scope begin genblk6[3] $end
+$upscope $end
+$scope begin genblk7[4] $end
+$upscope $end
+$scope begin genblk7[5] $end
+$upscope $end
+$scope begin genblk7[6] $end
+$upscope $end
+$scope begin genblk7[7] $end
+$upscope $end
+$scope begin genblk7[8] $end
+$upscope $end
+$scope begin genblk7[9] $end
+$upscope $end
+$scope begin genblk7[10] $end
+$upscope $end
+$scope begin genblk7[11] $end
+$upscope $end
+$scope begin genblk7[12] $end
+$upscope $end
+$scope begin genblk7[13] $end
+$upscope $end
+$scope begin genblk7[14] $end
+$upscope $end
+$scope begin genblk7[15] $end
+$upscope $end
+$scope begin genblk8[0] $end
+$upscope $end
+$scope begin genblk8[1] $end
+$upscope $end
+$scope begin genblk8[2] $end
+$upscope $end
+$scope begin genblk8[3] $end
+$upscope $end
+$scope begin genblk8[4] $end
+$upscope $end
+$scope begin genblk8[5] $end
+$upscope $end
+$scope begin genblk8[6] $end
+$upscope $end
+$scope begin genblk8[7] $end
+$upscope $end
+$scope begin genblk9[8] $end
+$upscope $end
+$scope begin genblk9[9] $end
+$upscope $end
+$scope begin genblk9[10] $end
+$upscope $end
+$scope begin genblk9[11] $end
+$upscope $end
+$scope begin genblk9[12] $end
+$upscope $end
+$scope begin genblk9[13] $end
+$upscope $end
+$scope begin genblk9[14] $end
+$upscope $end
+$scope begin genblk9[15] $end
+$upscope $end
+$upscope $end
+$scope module ksa_z_add $end
+$var wire 16 M" A [15:0] $end
+$var wire 16 N" B [15:0] $end
+$var wire 1 O" CIN $end
+$var wire 1 P" COUT $end
+$var wire 32 Q" props_and_gens [31:0] $end
+$var wire 32 R" layer4 [31:0] $end
+$var wire 32 S" layer3 [31:0] $end
+$var wire 32 T" layer2 [31:0] $end
+$var wire 32 U" layer1 [31:0] $end
+$var wire 16 V" carry [15:0] $end
+$var wire 16 W" Y [15:0] $end
+$scope function PG_init_generator $end
+$var reg 1 X" A_i $end
+$var reg 1 Y" B_i $end
+$var reg 1 Z" G $end
+$var reg 1 [" P $end
+$var reg 2 \" PG_init_generator [1:0] $end
+$upscope $end
+$scope function PG_inter_generator $end
+$var reg 1 ]" G $end
+$var reg 1 ^" G_pres $end
+$var reg 1 _" G_prev $end
+$var reg 1 `" P $end
+$var reg 2 a" PG_inter_generator [1:0] $end
+$var reg 1 b" P_pres $end
+$var reg 1 c" P_prev $end
+$upscope $end
+$scope begin genblk1[0] $end
+$upscope $end
+$scope begin genblk1[1] $end
+$upscope $end
+$scope begin genblk1[2] $end
+$upscope $end
+$scope begin genblk1[3] $end
+$upscope $end
+$scope begin genblk1[4] $end
+$upscope $end
+$scope begin genblk1[5] $end
+$upscope $end
+$scope begin genblk1[6] $end
+$upscope $end
+$scope begin genblk1[7] $end
+$upscope $end
+$scope begin genblk1[8] $end
+$upscope $end
+$scope begin genblk1[9] $end
+$upscope $end
+$scope begin genblk1[10] $end
+$upscope $end
+$scope begin genblk1[11] $end
+$upscope $end
+$scope begin genblk1[12] $end
+$upscope $end
+$scope begin genblk1[13] $end
+$upscope $end
+$scope begin genblk1[14] $end
+$upscope $end
+$scope begin genblk1[15] $end
+$upscope $end
+$scope begin genblk10[1] $end
+$upscope $end
+$scope begin genblk10[2] $end
+$upscope $end
+$scope begin genblk10[3] $end
+$upscope $end
+$scope begin genblk10[4] $end
+$upscope $end
+$scope begin genblk10[5] $end
+$upscope $end
+$scope begin genblk10[6] $end
+$upscope $end
+$scope begin genblk10[7] $end
+$upscope $end
+$scope begin genblk10[8] $end
+$upscope $end
+$scope begin genblk10[9] $end
+$upscope $end
+$scope begin genblk10[10] $end
+$upscope $end
+$scope begin genblk10[11] $end
+$upscope $end
+$scope begin genblk10[12] $end
+$upscope $end
+$scope begin genblk10[13] $end
+$upscope $end
+$scope begin genblk10[14] $end
+$upscope $end
+$scope begin genblk10[15] $end
+$upscope $end
+$scope begin genblk11[0] $end
+$upscope $end
+$scope begin genblk11[1] $end
+$upscope $end
+$scope begin genblk11[2] $end
+$upscope $end
+$scope begin genblk11[3] $end
+$upscope $end
+$scope begin genblk11[4] $end
+$upscope $end
+$scope begin genblk11[5] $end
+$upscope $end
+$scope begin genblk11[6] $end
+$upscope $end
+$scope begin genblk11[7] $end
+$upscope $end
+$scope begin genblk11[8] $end
+$upscope $end
+$scope begin genblk11[9] $end
+$upscope $end
+$scope begin genblk11[10] $end
+$upscope $end
+$scope begin genblk11[11] $end
+$upscope $end
+$scope begin genblk11[12] $end
+$upscope $end
+$scope begin genblk11[13] $end
+$upscope $end
+$scope begin genblk11[14] $end
+$upscope $end
+$scope begin genblk11[15] $end
+$upscope $end
+$scope begin genblk2[0] $end
+$upscope $end
+$scope begin genblk3[1] $end
+$upscope $end
+$scope begin genblk3[2] $end
+$upscope $end
+$scope begin genblk3[3] $end
+$upscope $end
+$scope begin genblk3[4] $end
+$upscope $end
+$scope begin genblk3[5] $end
+$upscope $end
+$scope begin genblk3[6] $end
+$upscope $end
+$scope begin genblk3[7] $end
+$upscope $end
+$scope begin genblk3[8] $end
+$upscope $end
+$scope begin genblk3[9] $end
+$upscope $end
+$scope begin genblk3[10] $end
+$upscope $end
+$scope begin genblk3[11] $end
+$upscope $end
+$scope begin genblk3[12] $end
+$upscope $end
+$scope begin genblk3[13] $end
+$upscope $end
+$scope begin genblk3[14] $end
+$upscope $end
+$scope begin genblk3[15] $end
+$upscope $end
+$scope begin genblk4[0] $end
+$upscope $end
+$scope begin genblk4[1] $end
+$upscope $end
+$scope begin genblk5[2] $end
+$upscope $end
+$scope begin genblk5[3] $end
+$upscope $end
+$scope begin genblk5[4] $end
+$upscope $end
+$scope begin genblk5[5] $end
+$upscope $end
+$scope begin genblk5[6] $end
+$upscope $end
+$scope begin genblk5[7] $end
+$upscope $end
+$scope begin genblk5[8] $end
+$upscope $end
+$scope begin genblk5[9] $end
+$upscope $end
+$scope begin genblk5[10] $end
+$upscope $end
+$scope begin genblk5[11] $end
+$upscope $end
+$scope begin genblk5[12] $end
+$upscope $end
+$scope begin genblk5[13] $end
+$upscope $end
+$scope begin genblk5[14] $end
+$upscope $end
+$scope begin genblk5[15] $end
+$upscope $end
+$scope begin genblk6[0] $end
+$upscope $end
+$scope begin genblk6[1] $end
+$upscope $end
+$scope begin genblk6[2] $end
+$upscope $end
+$scope begin genblk6[3] $end
+$upscope $end
+$scope begin genblk7[4] $end
+$upscope $end
+$scope begin genblk7[5] $end
+$upscope $end
+$scope begin genblk7[6] $end
+$upscope $end
+$scope begin genblk7[7] $end
+$upscope $end
+$scope begin genblk7[8] $end
+$upscope $end
+$scope begin genblk7[9] $end
+$upscope $end
+$scope begin genblk7[10] $end
+$upscope $end
+$scope begin genblk7[11] $end
+$upscope $end
+$scope begin genblk7[12] $end
+$upscope $end
+$scope begin genblk7[13] $end
+$upscope $end
+$scope begin genblk7[14] $end
+$upscope $end
+$scope begin genblk7[15] $end
+$upscope $end
+$scope begin genblk8[0] $end
+$upscope $end
+$scope begin genblk8[1] $end
+$upscope $end
+$scope begin genblk8[2] $end
+$upscope $end
+$scope begin genblk8[3] $end
+$upscope $end
+$scope begin genblk8[4] $end
+$upscope $end
+$scope begin genblk8[5] $end
+$upscope $end
+$scope begin genblk8[6] $end
+$upscope $end
+$scope begin genblk8[7] $end
+$upscope $end
+$scope begin genblk9[8] $end
+$upscope $end
+$scope begin genblk9[9] $end
+$upscope $end
+$scope begin genblk9[10] $end
+$upscope $end
+$scope begin genblk9[11] $end
+$upscope $end
+$scope begin genblk9[12] $end
+$upscope $end
+$scope begin genblk9[13] $end
+$upscope $end
+$scope begin genblk9[14] $end
+$upscope $end
+$scope begin genblk9[15] $end
+$upscope $end
+$upscope $end
+$scope module ksa_z_sub $end
+$var wire 16 d" A [15:0] $end
+$var wire 16 e" B [15:0] $end
+$var wire 1 f" CIN $end
+$var wire 1 g" COUT $end
+$var wire 32 h" props_and_gens [31:0] $end
+$var wire 32 i" layer4 [31:0] $end
+$var wire 32 j" layer3 [31:0] $end
+$var wire 32 k" layer2 [31:0] $end
+$var wire 32 l" layer1 [31:0] $end
+$var wire 16 m" carry [15:0] $end
+$var wire 16 n" Y [15:0] $end
+$scope function PG_init_generator $end
+$var reg 1 o" A_i $end
+$var reg 1 p" B_i $end
+$var reg 1 q" G $end
+$var reg 1 r" P $end
+$var reg 2 s" PG_init_generator [1:0] $end
+$upscope $end
+$scope function PG_inter_generator $end
+$var reg 1 t" G $end
+$var reg 1 u" G_pres $end
+$var reg 1 v" G_prev $end
+$var reg 1 w" P $end
+$var reg 2 x" PG_inter_generator [1:0] $end
+$var reg 1 y" P_pres $end
+$var reg 1 z" P_prev $end
+$upscope $end
+$scope begin genblk1[0] $end
+$upscope $end
+$scope begin genblk1[1] $end
+$upscope $end
+$scope begin genblk1[2] $end
+$upscope $end
+$scope begin genblk1[3] $end
+$upscope $end
+$scope begin genblk1[4] $end
+$upscope $end
+$scope begin genblk1[5] $end
+$upscope $end
+$scope begin genblk1[6] $end
+$upscope $end
+$scope begin genblk1[7] $end
+$upscope $end
+$scope begin genblk1[8] $end
+$upscope $end
+$scope begin genblk1[9] $end
+$upscope $end
+$scope begin genblk1[10] $end
+$upscope $end
+$scope begin genblk1[11] $end
+$upscope $end
+$scope begin genblk1[12] $end
+$upscope $end
+$scope begin genblk1[13] $end
+$upscope $end
+$scope begin genblk1[14] $end
+$upscope $end
+$scope begin genblk1[15] $end
+$upscope $end
+$scope begin genblk10[1] $end
+$upscope $end
+$scope begin genblk10[2] $end
+$upscope $end
+$scope begin genblk10[3] $end
+$upscope $end
+$scope begin genblk10[4] $end
+$upscope $end
+$scope begin genblk10[5] $end
+$upscope $end
+$scope begin genblk10[6] $end
+$upscope $end
+$scope begin genblk10[7] $end
+$upscope $end
+$scope begin genblk10[8] $end
+$upscope $end
+$scope begin genblk10[9] $end
+$upscope $end
+$scope begin genblk10[10] $end
+$upscope $end
+$scope begin genblk10[11] $end
+$upscope $end
+$scope begin genblk10[12] $end
+$upscope $end
+$scope begin genblk10[13] $end
+$upscope $end
+$scope begin genblk10[14] $end
+$upscope $end
+$scope begin genblk10[15] $end
+$upscope $end
+$scope begin genblk11[0] $end
+$upscope $end
+$scope begin genblk11[1] $end
+$upscope $end
+$scope begin genblk11[2] $end
+$upscope $end
+$scope begin genblk11[3] $end
+$upscope $end
+$scope begin genblk11[4] $end
+$upscope $end
+$scope begin genblk11[5] $end
+$upscope $end
+$scope begin genblk11[6] $end
+$upscope $end
+$scope begin genblk11[7] $end
+$upscope $end
+$scope begin genblk11[8] $end
+$upscope $end
+$scope begin genblk11[9] $end
+$upscope $end
+$scope begin genblk11[10] $end
+$upscope $end
+$scope begin genblk11[11] $end
+$upscope $end
+$scope begin genblk11[12] $end
+$upscope $end
+$scope begin genblk11[13] $end
+$upscope $end
+$scope begin genblk11[14] $end
+$upscope $end
+$scope begin genblk11[15] $end
+$upscope $end
+$scope begin genblk2[0] $end
+$upscope $end
+$scope begin genblk3[1] $end
+$upscope $end
+$scope begin genblk3[2] $end
+$upscope $end
+$scope begin genblk3[3] $end
+$upscope $end
+$scope begin genblk3[4] $end
+$upscope $end
+$scope begin genblk3[5] $end
+$upscope $end
+$scope begin genblk3[6] $end
+$upscope $end
+$scope begin genblk3[7] $end
+$upscope $end
+$scope begin genblk3[8] $end
+$upscope $end
+$scope begin genblk3[9] $end
+$upscope $end
+$scope begin genblk3[10] $end
+$upscope $end
+$scope begin genblk3[11] $end
+$upscope $end
+$scope begin genblk3[12] $end
+$upscope $end
+$scope begin genblk3[13] $end
+$upscope $end
+$scope begin genblk3[14] $end
+$upscope $end
+$scope begin genblk3[15] $end
+$upscope $end
+$scope begin genblk4[0] $end
+$upscope $end
+$scope begin genblk4[1] $end
+$upscope $end
+$scope begin genblk5[2] $end
+$upscope $end
+$scope begin genblk5[3] $end
+$upscope $end
+$scope begin genblk5[4] $end
+$upscope $end
+$scope begin genblk5[5] $end
+$upscope $end
+$scope begin genblk5[6] $end
+$upscope $end
+$scope begin genblk5[7] $end
+$upscope $end
+$scope begin genblk5[8] $end
+$upscope $end
+$scope begin genblk5[9] $end
+$upscope $end
+$scope begin genblk5[10] $end
+$upscope $end
+$scope begin genblk5[11] $end
+$upscope $end
+$scope begin genblk5[12] $end
+$upscope $end
+$scope begin genblk5[13] $end
+$upscope $end
+$scope begin genblk5[14] $end
+$upscope $end
+$scope begin genblk5[15] $end
+$upscope $end
+$scope begin genblk6[0] $end
+$upscope $end
+$scope begin genblk6[1] $end
+$upscope $end
+$scope begin genblk6[2] $end
+$upscope $end
+$scope begin genblk6[3] $end
+$upscope $end
+$scope begin genblk7[4] $end
+$upscope $end
+$scope begin genblk7[5] $end
+$upscope $end
+$scope begin genblk7[6] $end
+$upscope $end
+$scope begin genblk7[7] $end
+$upscope $end
+$scope begin genblk7[8] $end
+$upscope $end
+$scope begin genblk7[9] $end
+$upscope $end
+$scope begin genblk7[10] $end
+$upscope $end
+$scope begin genblk7[11] $end
+$upscope $end
+$scope begin genblk7[12] $end
+$upscope $end
+$scope begin genblk7[13] $end
+$upscope $end
+$scope begin genblk7[14] $end
+$upscope $end
+$scope begin genblk7[15] $end
+$upscope $end
+$scope begin genblk8[0] $end
+$upscope $end
+$scope begin genblk8[1] $end
+$upscope $end
+$scope begin genblk8[2] $end
+$upscope $end
+$scope begin genblk8[3] $end
+$upscope $end
+$scope begin genblk8[4] $end
+$upscope $end
+$scope begin genblk8[5] $end
+$upscope $end
+$scope begin genblk8[6] $end
+$upscope $end
+$scope begin genblk8[7] $end
+$upscope $end
+$scope begin genblk9[8] $end
+$upscope $end
+$scope begin genblk9[9] $end
+$upscope $end
+$scope begin genblk9[10] $end
+$upscope $end
+$scope begin genblk9[11] $end
+$upscope $end
+$scope begin genblk9[12] $end
+$upscope $end
+$scope begin genblk9[13] $end
+$upscope $end
+$scope begin genblk9[14] $end
+$upscope $end
+$scope begin genblk9[15] $end
+$upscope $end
+$upscope $end
+$scope module qm1 $end
+$var wire 16 {" X_init [15:0] $end
+$var wire 16 |" Y_init [15:0] $end
+$var wire 16 }" Z_init [15:0] $end
+$var wire 16 ~" angle_in [15:0] $end
+$var reg 16 !# Z_init_reg [15:0] $end
+$var reg 1 6 flip_X_out $end
+$var reg 1 @ flip_Y_out $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 !#
+b0 ~"
+b0 }"
+b0 |"
+b100110110111 {"
+0z"
+0y"
+b0 x"
+0w"
+0v"
+0u"
+0t"
+b0 s"
+0r"
+0q"
+0p"
+0o"
+b1111001101101111 n"
+b1 m"
+b1010100000001000001000001010000 l"
+b1000000000000000000000000000000 k"
+b0 j"
+b0 i"
+b1010101000001010001010001010100 h"
+0g"
+1f"
+b1111001101101110 e"
+b0 d"
+1c"
+0b"
+b0 a"
+0`"
+0_"
+0^"
+0]"
+b1 \"
+1["
+0Z"
+1Y"
+0X"
+b110010010001 W"
+b0 V"
+b10000000000000000000001 U"
+b1 T"
+b1 S"
+b1 R"
+b10100000100000100000001 Q"
+0P"
+0O"
+b110010010001 N"
+b0 M"
+1L"
+1K"
+b1 J"
+1I"
+0H"
+0G"
+0F"
+b1 E"
+1D"
+0C"
+1B"
+0A"
+b0 @"
+b1111111111111111 ?"
+b1010101010101010101010101010101 >"
+b1010101010101010101010101010101 ="
+b1010101010101010101010101010101 <"
+b1010101010101010101010101010101 ;"
+b1010101010101010101010101010101 :"
+19"
+18"
+b1111111111111111 7"
+b0 6"
+05"
+04"
+b0 3"
+02"
+01"
+00"
+0/"
+b0 ."
+0-"
+0,"
+0+"
+0*"
+b0 )"
+b0 ("
+b0 '"
+b0 &"
+b0 %"
+b0 $"
+b0 #"
+0""
+0!"
+b0 ~
+b0 }
+1|
+1{
+b1 z
+1y
+0x
+0w
+0v
+b1 u
+1t
+0s
+1r
+0q
+b0 p
+b1111111111111111 o
+b1010101010101010101010101010101 n
+b1010101010101010101010101010101 m
+b1010101010101010101010101010101 l
+b1010101010101010101010101010101 k
+b1010101010101010101010101010101 j
+1i
+1h
+b1111111111111111 g
+b0 f
+0e
+0d
+b0 c
+0b
+0a
+0`
+0_
+b0 ^
+0]
+0\
+0[
+0Z
+b0 Y
+b0 X
+b0 W
+b0 V
+b0 U
+b0 T
+b0 S
+0R
+0Q
+b0 P
+b0 O
+b0 N
+0M
+0L
+0K
+0J
+1I
+b110010010001 H
+b0 G
+b0 F
+b0 E
+b0 D
+b0 C
+b0 B
+b110010010001 A
+0@
+0?
+b0 >
+b0 =
+b0 <
+b0 ;
+0:
+b0 9
+b0 8
+07
+06
+05
+b0 4
+b0 3
+b0 2
+b0 1
+b110010010001 0
+b1111001101101111 /
+b1 .
+b0 -
+b0 ,
+b0 +
+0*
+b0 )
+1(
+0'
+0&
+0%
+b0 $
+0#
+b0 "
+b100110110111 !
+$end
+#5000
+1#
+#10000
+b1 ;
+15
+b1010101010101 B
+b1010101010101 }"
+b1010101010101 !#
+0#
+1%
+b1010101010101 +
+b1010101010101 ~"
+1'
+1&
+#15000
+b10 ;
+1*
+b1 C
+1#
+#20000
+0#
+#25000
+09"
+1g"
+b1 ?"
+b1110111011111111 m"
+b11100000100010 V"
+b0 ;"
+b10101 $"
+b1 -
+b0 <"
+b10101 T
+b10101010101010101010101010101010 k
+b1 ,
+b10101000000000001000000010 R"
+b10101010001010100010101010100101 i"
+b0 .
+b10101 %"
+b1000000000000000000000000000000 ="
+0K"
+b0 J"
+0I"
+0L"
+b1111011001001001 1
+b1111011001001001 @"
+b10101 U
+b10101010101010101010101010101010 l
+b10101000000000001000000010 S"
+b10101010001010100010101010100101 j"
+b10101 &"
+b0 3"
+02"
+04"
+15"
+b100110110111 2
+b100110110111 )"
+b1010100000100000000000000000000 >"
+b10101 V
+b0 c
+0b
+0d
+1e
+b100110110111 4
+b100110110111 Y
+b1101010101010101010101010101010 m
+1w
+0{
+b10 z
+1v
+0y
+1x
+0|
+b100110110111 3
+b100110110111 p
+b10101000000000001000000010 T"
+1^"
+1]"
+0_"
+0c"
+b10 a"
+0`"
+0b"
+b10000111100110 0
+b10000111100110 W"
+b10101010001010100010101010100101 k"
+0w"
+1z"
+1u"
+b10 x"
+1t"
+0v"
+0y"
+b100011000100 /
+b100011000100 n"
+b10000010000010101 '"
+b1010101000101000001000001000000 :"
+b0 E"
+0D"
+0B"
+b10000010000010101 W
+b1010110100110101010101010101010 n
+b1101000010100001000000010 U"
+b1011010000110100010010110100101 l"
+b10000010100010100010101 #"
+b1 ."
+1-"
+1+"
+b10000010100010100010101 S
+b1 ^
+1]
+1Z
+b1010101100101101001101001101010 j
+b10 u
+0t
+1s
+1q
+b10 \"
+0["
+1Z"
+b1011000010101001000010010 Q"
+1Y"
+1X"
+1r"
+b1010110000101100010010101100101 h"
+b1 s"
+0q"
+0p"
+1o"
+b1111011001001000 7"
+b100110110111 $
+b100110110111 >
+0*
+1M
+b100110110111 9
+b100110110111 ~
+b100110110111 D
+b100110110111 O
+b100110110111 f
+b1010101010101 F
+b1010101010101 M"
+b1010101010101 d"
+b10 C
+1#
+#30000
+0#
+#35000
+19"
+0g"
+b1 m"
+b1111111111111111 ?"
+b1010101010101011010101010101010 l
+b0 V"
+b1 $"
+b1 T
+b10101010101010101010101010101010 ;"
+b1 %"
+b1 U
+b1010101010101010101010110101010 m
+b101 R"
+b0 i"
+b1 .
+b1010101010101011010101010101010 <"
+b1 &"
+0I"
+0L"
+b1 1
+b1 @"
+b1 V
+b101 S"
+b0 j"
+b1010101010101010101010110101010 ="
+b10 J"
+1F"
+1H"
+1K"
+b1 '"
+05"
+b1 2
+b1 )"
+b1 W
+0e
+b1 4
+b1 Y
+b1010101010101010101010101011010 n
+b10 z
+1v
+0y
+0w
+1x
+1{
+0|
+b1 3
+b1 p
+b101 T"
+0`"
+0b"
+0c"
+b0 a"
+0]"
+0^"
+b11101110011 0
+b11101110011 W"
+b1010000000000000000000000000000 k"
+0z"
+b0 x"
+0t"
+0w"
+0u"
+1y"
+b1111100010001101 /
+b1111100010001101 n"
+b1010101010101010101010101011010 >"
+1D"
+b101000001010000000101 U"
+b1010101000000000000000001000000 l"
+0I
+1J
+b1111100010001100 e"
+1*"
+b1010101010101010101010101010110 :"
+b1 E"
+0C"
+1B"
+0A"
+b1 #"
+b1 ."
+1-"
+0+"
+b1 S
+b0 ^
+0]
+0Z
+b1010101010101010101010101010110 j
+b1 u
+1t
+0s
+0q
+1["
+b101010001010100000101 Q"
+b1 \"
+0Z"
+1Y"
+0X"
+b0 s"
+0r"
+b1010101010000000100000001010000 h"
+0p"
+0o"
+b11101110011 A
+b11101110011 H
+b11101110011 N"
+b1 )
+b1 =
+b1111111111111111 7"
+b1 $
+b1 >
+b1 <
+b1 G
+b1 N
+b0 8
+b0 P
+b1 E
+b1 }
+b1 6"
+b0 9
+b0 ~
+b1 D
+b1 O
+b1 f
+b0 F
+b0 M"
+b0 d"
+1#
+#40000
+0#
+#45000
+b11 m"
+b110 V"
+b0 x"
+0w"
+b1010 R"
+b1 i"
+b0 .
+0`"
+0c"
+b1010 S"
+b1 j"
+0p"
+b1010000000000001010 T"
+b0 a"
+0]"
+0_"
+1b"
+b1111101100 0
+b1111101100 W"
+b1010100000000000000000000000001 k"
+1y"
+0z"
+b1111110000010110 /
+b1111110000010110 n"
+1Y"
+b1010101000000001010 U"
+b1010101010000000000000000000001 l"
+1I
+b1111110000010100 e"
+b1010101010001000110 Q"
+b1 \"
+1["
+0Z"
+0X"
+b1010101010100000000000100010001 h"
+b0 s"
+0r"
+0o"
+b1111101011 A
+b1111101011 H
+b1111101011 N"
+b10 <
+b10 G
+b10 N
+b1 F
+b1 M"
+b1 d"
+1#
+#50000
+0#
+#55000
+b1 m"
+b0 V"
+b0 x"
+0w"
+0z"
+b1 R"
+b0 i"
+b1 .
+1K
+b1 S"
+0b"
+b0 j"
+b1 s"
+1r"
+1p"
+b10101010000000001 T"
+b0 a"
+0`"
+0c"
+b111111101 0
+b111111101 W"
+b1010101000000000000000000000000 k"
+1y"
+b1111111000000011 /
+b1111111000000011 n"
+b0 \"
+0["
+0Y"
+b10101010101000001 U"
+b1010101010100000000000000000000 l"
+0I
+0J
+b1111111000000010 e"
+b10101010101010001 Q"
+b1010101010101000000000000000100 h"
+b111111101 A
+b111111101 H
+b111111101 N"
+b11 <
+b11 G
+b11 N
+b0 F
+b0 M"
+b0 d"
+1#
+#60000
+0#
+#65000
+b11 m"
+b111111110 V"
+b1010101010101010 R"
+b1 i"
+b0 .
+0]"
+b0 a"
+0`"
+0b"
+0c"
+b1010101010101010 S"
+b1000000000000000000000000000001 j"
+1y"
+b0 s"
+0r"
+b101010110101010 T"
+1_"
+b100000000 0
+b100000000 W"
+b1010101010000000000000000000001 k"
+b0 x"
+0w"
+0z"
+b1111111100000010 /
+b1111111100000010 n"
+1["
+b101010101011010 U"
+b1010101010101000000000000000001 l"
+1I
+b1111111100000000 e"
+b101010101010110 Q"
+b1 \"
+0Z"
+1Y"
+0X"
+b1010101010101010000000000000001 h"
+0p"
+0o"
+b11111111 A
+b11111111 H
+b11111111 N"
+b100 <
+b100 G
+b100 N
+b1 F
+b1 M"
+b1 d"
+1#
+#70000
+0#
+#75000
+b11111111 m"
+b0 V"
+b0 x"
+0w"
+1z"
+b0 R"
+b1010101010101 i"
+b0 .
+b0 S"
+b1000000000000000001010101010101 j"
+b1 s"
+1r"
+1p"
+b0 T"
+b0 a"
+0`"
+0_"
+0b"
+0c"
+b10000000 0
+b10000000 W"
+b1010101010000000001010101010101 k"
+0y"
+b1111111110000000 /
+b1111111110000000 n"
+b0 \"
+0["
+0Y"
+b0 U"
+b1010101010101000001010101010101 l"
+0I
+1J
+b1111111101111111 e"
+b100000000000000 Q"
+b1010101010101010001010101010101 h"
+b10000000 A
+b10000000 H
+b10000000 N"
+b101 <
+b101 G
+b101 N
+b0 F
+b0 M"
+b0 d"
+1#
+#80000
+0#
+#85000
+b1111111 m"
+b10101010101 i"
+b1010000000000000000010101010101 j"
+b1010101010100000000010101010101 k"
+0z"
+b1010101010101010000010101010101 l"
+b0 x"
+0w"
+1y"
+b1111111111000000 /
+b1111111111000000 n"
+1K
+1b"
+0c"
+b1000000 0
+b1000000 W"
+b0 s"
+0r"
+0p"
+b1010101010101010100010101010101 h"
+b1 \"
+1["
+1Y"
+b1000000000000 Q"
+1I
+b1111111110111111 e"
+b1000000 A
+b1000000 H
+b1000000 N"
+b110 <
+b110 G
+b110 N
+1#
+#90000
+0#
+#95000
+b111111 m"
+b101010101 i"
+b1010100000000000000000101010101 j"
+b1010101010101000000000101010101 k"
+0K
+1y"
+b1010101010101010100000101010101 l"
+b0 x"
+0w"
+0z"
+b1111111111100000 /
+b1111111111100000 n"
+1L
+0c"
+1b"
+b100000 0
+b100000 W"
+b1010101010101010101000101010101 h"
+b0 s"
+0r"
+0p"
+b10000000000 Q"
+b1 \"
+1["
+1Y"
+0I
+0J
+b1111111111011111 e"
+b100000 A
+b100000 H
+b100000 N"
+b111 <
+b111 G
+b111 N
+1#
+#100000
+0#
+#105000
+b11111 m"
+b1010101 i"
+b1010101000000000000000001010101 j"
+b1010101010101010000000001010101 k"
+1y"
+b1010101010101010101000001010101 l"
+b0 x"
+0w"
+0z"
+b1111111111110000 /
+b1111111111110000 n"
+0c"
+1b"
+b10000 0
+b10000 W"
+b1010101010101010101010001010101 h"
+b0 s"
+0r"
+0p"
+b100000000 Q"
+b1 \"
+1["
+1Y"
+1I
+b1111111111101111 e"
+b10000 A
+b10000 H
+b10000 N"
+b1000 <
+b1000 G
+b1000 N
+1#
+#110000
+0#
+#115000
+b1111 m"
+b10101 i"
+b1010101010000000000000000010101 j"
+b1010101010101010100000000010101 k"
+1y"
+b1010101010101010101010000010101 l"
+b0 x"
+0w"
+0z"
+b1111111111111000 /
+b1111111111111000 n"
+0c"
+1b"
+b1000 0
+b1000 W"
+1K
+b1010101010101010101010100010101 h"
+b0 s"
+0r"
+0p"
+b1000000 Q"
+b1 \"
+1["
+1Y"
+0I
+1J
+b1111111111110111 e"
+b1000 A
+b1000 H
+b1000 N"
+b1001 <
+b1001 G
+b1001 N
+1#
+#120000
+0#
+#125000
+1g"
+b1111111111111111 m"
+b1010101010101010101010101010101 i"
+b1010101010101010101010101010101 j"
+b1010101010101010101010101010101 k"
+b1010101010101010101010101010101 l"
+b1 x"
+1w"
+1z"
+b0 /
+b0 n"
+1K
+1L
+0b"
+b0 0
+b0 W"
+b1010101010101010101010101010101 h"
+b1 s"
+1r"
+1p"
+b0 Q"
+b0 \"
+0["
+0Y"
+1I
+b1111111111111111 e"
+b0 A
+b0 H
+b0 N"
+b1110 <
+b1110 G
+b1110 N
+1#
+#130000
+0#
+#135000
+0K
+0L
+b11 ;
+0I
+0J
+1?
+b1111 <
+b1111 G
+b1111 N
+1#
+#140000
+0#
+#145000
+b0 ;
+0?
+0M
+1:
+b11 C
+1#
+#150000
+0#
+#155000
+b1 ;
+0:
+b0 C
+1#
+#160000
+0#
+#165000
+b10 ;
+1*
+b1 C
+1#
+#170000
+0#
+#175000
+09"
+b1110111011111111 m"
+b1 ?"
+b11100000100010 V"
+b10101010101010101010101010101010 l
+b10101 $"
+b10101 T
+b10101 %"
+b0 ;"
+b10101 U
+b1101010101010101010101010101010 m
+b10101000000000001000000010 R"
+b10101010001010100010101010100101 i"
+b0 .
+b10101 &"
+0K"
+1^"
+1]"
+0_"
+b10 a"
+0`"
+b0 <"
+b10101 V
+b10101000000000001000000010 S"
+b10101010001010100010101010100101 j"
+b10000010000010101 '"
+b0 3"
+02"
+04"
+15"
+b100110110111 2
+b100110110111 )"
+0p"
+b1000000000000000000000000000000 ="
+b0 J"
+0F"
+0I"
+0H"
+0L"
+b1111011001001001 1
+b1111011001001001 @"
+b10000010000010101 W
+b0 c
+0b
+0d
+1e
+b100110110111 4
+b100110110111 Y
+1w
+1x
+0{
+0|
+b1010110100110101010101010101010 n
+b100110110111 3
+b100110110111 p
+b10101000000000001000000010 T"
+0b"
+0c"
+b10000111100110 0
+b10000111100110 W"
+b10101010001010100010101010100101 k"
+1u"
+0y"
+b10 x"
+1t"
+0w"
+0v"
+0z"
+b100011000100 /
+b100011000100 n"
+b0 E"
+0D"
+0B"
+1Z"
+1Y"
+b1010100000100000000000000000000 >"
+b1101000010100001000000010 U"
+b1011010000110100010010110100101 l"
+1I
+b10000010100010100010101 #"
+b1111001101101110 e"
+1+"
+0*"
+b1010101000101000001000001000000 :"
+b10000010100010100010101 S
+b1 ^
+1]
+1Z
+b1010101100101101001101001101010 j
+b10 u
+0t
+1s
+1q
+b1011000010101001000010010 Q"
+b10 \"
+0["
+1X"
+b1010110000101100010010101100101 h"
+b1 s"
+1r"
+0q"
+1o"
+b1111011001001000 7"
+b110010010001 A
+b110010010001 H
+b110010010001 N"
+0*
+b0 )
+b0 =
+b100110110111 $
+b100110110111 >
+1M
+b100110110111 9
+b100110110111 ~
+b0 <
+b0 G
+b0 N
+b10 C
+b0 E
+b0 }
+b0 6"
+b100110110111 D
+b100110110111 O
+b100110110111 f
+b1010101010101 F
+b1010101010101 M"
+b1010101010101 d"
+1#
+#180000
+0#
+#185000
+19"
+0g"
+b1 m"
+b1111111111111111 ?"
+b1010101010101011010101010101010 l
+b0 V"
+b1 $"
+b1 T
+b10101010101010101010101010101010 ;"
+b1 %"
+b1 U
+b1010101010101010101010110101010 m
+b101 R"
+b0 i"
+b1 .
+b1010101010101011010101010101010 <"
+b1 &"
+0I"
+0L"
+b1 1
+b1 @"
+b1 V
+b101 S"
+b0 j"
+b1010101010101010101010110101010 ="
+b10 J"
+1F"
+1H"
+1K"
+b1 '"
+05"
+b1 2
+b1 )"
+b1 W
+0e
+b1 4
+b1 Y
+b1010101010101010101010101011010 n
+b10 z
+1v
+0y
+0w
+1x
+1{
+0|
+b1 3
+b1 p
+b101 T"
+0`"
+0b"
+0c"
+b0 a"
+0]"
+0^"
+b11101110011 0
+b11101110011 W"
+b1010000000000000000000000000000 k"
+b0 x"
+0t"
+0w"
+0u"
+1y"
+0z"
+b1111100010001101 /
+b1111100010001101 n"
+b1010101010101010101010101011010 >"
+1D"
+b101000001010000000101 U"
+b1010101000000000000000001000000 l"
+0I
+1J
+b1111100010001100 e"
+1*"
+b1010101010101010101010101010110 :"
+b1 E"
+0C"
+1B"
+0A"
+b1 #"
+b1 ."
+1-"
+0+"
+b1 S
+b0 ^
+0]
+0Z
+b1010101010101010101010101010110 j
+b1 u
+1t
+0s
+0q
+1["
+b101010001010100000101 Q"
+b1 \"
+0Z"
+1Y"
+0X"
+b0 s"
+0r"
+b1010101010000000100000001010000 h"
+0p"
+0o"
+b11101110011 A
+b11101110011 H
+b11101110011 N"
+b1 )
+b1 =
+b1111111111111111 7"
+b1 $
+b1 >
+b1 <
+b1 G
+b1 N
+b0 8
+b0 P
+b1 E
+b1 }
+b1 6"
+b0 9
+b0 ~
+b1 D
+b1 O
+b1 f
+b0 F
+b0 M"
+b0 d"
+1#
+#190000
+0#
+#195000
+b11 m"
+b110 V"
+b0 x"
+0w"
+b1010 R"
+b1 i"
+b0 .
+0`"
+0c"
+b1010 S"
+b1 j"
+0p"
+b1010000000000001010 T"
+b0 a"
+0]"
+0_"
+1b"
+b1111101100 0
+b1111101100 W"
+b1010100000000000000000000000001 k"
+1y"
+0z"
+b1111110000010110 /
+b1111110000010110 n"
+1Y"
+b1010101000000001010 U"
+b1010101010000000000000000000001 l"
+1I
+b1111110000010100 e"
+b1010101010001000110 Q"
+b1 \"
+1["
+0Z"
+0X"
+b1010101010100000000000100010001 h"
+b0 s"
+0r"
+0o"
+b1111101011 A
+b1111101011 H
+b1111101011 N"
+b10 <
+b10 G
+b10 N
+b1 F
+b1 M"
+b1 d"
+1#
+#200000
+0#
+#205000
+b1 m"
+b0 V"
+b0 x"
+0w"
+0z"
+b1 R"
+b0 i"
+b1 .
+1K
+b1 S"
+0b"
+b0 j"
+b1 s"
+1r"
+1p"
+b10101010000000001 T"
+b0 a"
+0`"
+0c"
+b111111101 0
+b111111101 W"
+b1010101000000000000000000000000 k"
+1y"
+b1111111000000011 /
+b1111111000000011 n"
+b0 \"
+0["
+0Y"
+b10101010101000001 U"
+b1010101010100000000000000000000 l"
+0I
+0J
+b1111111000000010 e"
+b10101010101010001 Q"
+b1010101010101000000000000000100 h"
+b111111101 A
+b111111101 H
+b111111101 N"
+b11 <
+b11 G
+b11 N
+b0 F
+b0 M"
+b0 d"
+1#
+#210000
+0#
+#215000
+b11 m"
+b111111110 V"
+b1010101010101010 R"
+b1 i"
+b0 .
+0]"
+b0 a"
+0`"
+0b"
+0c"
+b1010101010101010 S"
+b1000000000000000000000000000001 j"
+1y"
+b0 s"
+0r"
+b101010110101010 T"
+1_"
+b100000000 0
+b100000000 W"
+b1010101010000000000000000000001 k"
+b0 x"
+0w"
+0z"
+b1111111100000010 /
+b1111111100000010 n"
+1["
+b101010101011010 U"
+b1010101010101000000000000000001 l"
+1I
+b1111111100000000 e"
+b101010101010110 Q"
+b1 \"
+0Z"
+1Y"
+0X"
+b1010101010101010000000000000001 h"
+0p"
+0o"
+b11111111 A
+b11111111 H
+b11111111 N"
+b100 <
+b100 G
+b100 N
+b1 F
+b1 M"
+b1 d"
+1#
+#220000
+0#
+#225000
+b11111111 m"
+b0 V"
+b0 x"
+0w"
+1z"
+b0 R"
+b1010101010101 i"
+b0 .
+b0 S"
+b1000000000000000001010101010101 j"
+b1 s"
+1r"
+1p"
+b0 T"
+b0 a"
+0`"
+0_"
+0b"
+0c"
+b10000000 0
+b10000000 W"
+b1010101010000000001010101010101 k"
+0y"
+b1111111110000000 /
+b1111111110000000 n"
+b0 \"
+0["
+0Y"
+b0 U"
+b1010101010101000001010101010101 l"
+0I
+1J
+b1111111101111111 e"
+b100000000000000 Q"
+b1010101010101010001010101010101 h"
+b10000000 A
+b10000000 H
+b10000000 N"
+b101 <
+b101 G
+b101 N
+b0 F
+b0 M"
+b0 d"
+1#
+#230000
+0#
+#235000
+b1111111 m"
+b10101010101 i"
+b1010000000000000000010101010101 j"
+b1010101010100000000010101010101 k"
+0z"
+b1010101010101010000010101010101 l"
+b0 x"
+0w"
+1y"
+b1111111111000000 /
+b1111111111000000 n"
+1K
+1b"
+0c"
+b1000000 0
+b1000000 W"
+b0 s"
+0r"
+0p"
+b1010101010101010100010101010101 h"
+b1 \"
+1["
+1Y"
+b1000000000000 Q"
+1I
+b1111111110111111 e"
+b1000000 A
+b1000000 H
+b1000000 N"
+b110 <
+b110 G
+b110 N
+1#
+#240000
+0#
+#245000
+b111111 m"
+b101010101 i"
+b1010100000000000000000101010101 j"
+b1010101010101000000000101010101 k"
+0K
+1y"
+b1010101010101010100000101010101 l"
+b0 x"
+0w"
+0z"
+b1111111111100000 /
+b1111111111100000 n"
+1L
+0c"
+1b"
+b100000 0
+b100000 W"
+b1010101010101010101000101010101 h"
+b0 s"
+0r"
+0p"
+b10000000000 Q"
+b1 \"
+1["
+1Y"
+0I
+0J
+b1111111111011111 e"
+b100000 A
+b100000 H
+b100000 N"
+b111 <
+b111 G
+b111 N
+1#
+#250000
+0#
+#255000
+b11111 m"
+b1010101 i"
+b1010101000000000000000001010101 j"
+b1010101010101010000000001010101 k"
+1y"
+b1010101010101010101000001010101 l"
+b0 x"
+0w"
+0z"
+b1111111111110000 /
+b1111111111110000 n"
+0c"
+1b"
+b10000 0
+b10000 W"
+b1010101010101010101010001010101 h"
+b0 s"
+0r"
+0p"
+b100000000 Q"
+b1 \"
+1["
+1Y"
+1I
+b1111111111101111 e"
+b10000 A
+b10000 H
+b10000 N"
+b1000 <
+b1000 G
+b1000 N
+1#
+#260000
+0#
+#265000
+b1111 m"
+b10101 i"
+b1010101010000000000000000010101 j"
+b1010101010101010100000000010101 k"
+1y"
+b1010101010101010101010000010101 l"
+b0 x"
+0w"
+0z"
+b1111111111111000 /
+b1111111111111000 n"
+0c"
+1b"
+b1000 0
+b1000 W"
+1K
+b1010101010101010101010100010101 h"
+b0 s"
+0r"
+0p"
+b1000000 Q"
+b1 \"
+1["
+1Y"
+0I
+1J
+b1111111111110111 e"
+b1000 A
+b1000 H
+b1000 N"
+b1001 <
+b1001 G
+b1001 N
+1#

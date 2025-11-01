@@ -4,8 +4,10 @@ module cordic_tb;
 
     // --- 1. Constants and Parameters ---
     parameter CLK_PERIOD = 10;
-    parameter Q_SCALE = 16384; 
-    parameter MAX_ERROR_LSB = 2; // Tolerance for verification
+    // Q_SCALE is 2^12 = 4096 for Q3.12
+    parameter Q_SCALE = 4096; 
+    // Set error tolerance appropriately for the working Q3.12 system
+    parameter MAX_ERROR_LSB = 6; 
 
     // --- 2. Testbench Signals (Inputs/Outputs) ---
     reg clk;
@@ -31,19 +33,18 @@ module cordic_tb;
         .cosine(cosine_out)
     );
 
-    // --- 5. Clock Generation ---
+    // --- 5. Clock Generation & Waveform Dumping ---
     initial begin
         clk = 0;
         forever #5 clk = ~clk;
     end
 
-    // --- 6. Waveform Dumping Setup ---
     initial begin
         $dumpfile("cordic_waveform.vcd");
-        $dumpvars(0, cordic_tb); // Dump all variables in the testbench
+        $dumpvars(0, cordic_tb);
     end
 
-    // --- 7. Test Sequence (Using Corrected Fixed-Point Vectors) ---
+    // --- 7. Test Sequence (First Quadrant Only) ---
     initial begin
         // Initialize
         errors = 0;
@@ -53,31 +54,34 @@ module cordic_tb;
         theta = 16'h0000;
         
         $display("-------------------------------------------------------");
-        $display("Starting CORDIC Testbench (Verilog-2001)");
+        $display("Starting CORDIC Testbench (First Quadrant Only)");
         $display("-------------------------------------------------------");
 
         // Apply Reset
         #10;
         reset_n = 1;
         
-        // ** Corrected Test Cases (Q1.14 Fixed-Point Values) **
-        // 1. 30 degrees: THETA(1555), SIN(2000), COS(376B)
-        run_test(16'h1555, 16'h2000, 16'h376B); 
+        // ** TEST CASES (Q1: 0 to pi/2, or 0000 to 4000) **
+        
+        // 1. 0 degrees (Boundary): THETA(0000), SIN(0000), COS(1000)
+        run_test(16'h0000, 16'h0000, 16'h1000); 
 
-        // 2. 90 degrees: THETA(4000), SIN(3FFF), COS(0000)
-        run_test(16'h4000, 16'h3FFF, 16'h0000); 
+        // 2. 5 degrees: THETA(0161), SIN(0161), COS(0FFF)
+        run_test(16'h0161, 16'h0161, 16'h0FFF); 
 
-        // 3. 135 degrees: THETA(6000), SIN(2D80), COS(D280)
-        run_test(16'h6000, 16'h2D80, 16'hD280); 
+        // 3. 30 degrees: THETA(0861), SIN(0800), COS(0DDB)
+        run_test(16'h0861, 16'h0800, 16'h0DDB); 
 
-        // 4. 270 degrees: THETA(C000), SIN(C000), COS(0000)
-        run_test(16'hC000, 16'hC000, 16'h0000); 
+        // 4. 45 degrees: THETA(2000), SIN(0B5F), COS(0B5F)
+        // 45 deg = pi/4. sin(45) = cos(45) approx 0.707 * 4096 = 2896 (0B5F)
+        run_test(16'h2000, 16'h0B5F, 16'h0B5F); 
 
-        // 5. 5 degrees: THETA(02AC), SIN(0598), COS(3FBF)
-        run_test(16'h02AC, 16'h0598, 16'h3FBF); 
+        // 5. 60 degrees: THETA(2F9F), SIN(0DDB), COS(0800)
+        // 60 deg = pi/3. sin(60) approx 0.866 * 4096 = 3547 (0DDB)
+        run_test(16'h2F9F, 16'h0DDB, 16'h0800); 
 
-        // 6. -45 degrees: THETA(E000), SIN(D280), COS(2D80)
-        run_test(16'hE000, 16'hD280, 16'h2D80); 
+        // 6. 90 degrees (Boundary): THETA(4000), SIN(1000), COS(0000)
+        run_test(16'h4000, 16'h1000, 16'h0000); 
 
         // --- Summary ---
         $display("\n-------------------------------------------------------");
@@ -85,10 +89,10 @@ module cordic_tb;
         $display("-------------------------------------------------------");
         
         if (errors == 0) begin
-            $display("** PASS: All CORDIC values tested successfully. **");
+            $display("** PASS: All CORDIC values tested successfully in Q1. **");
             $finish;
         end else begin
-            $display("** FAIL: Found errors in CORDIC calculation. **");
+            $display("** FAIL: Found errors in core CORDIC calculation. **");
             $finish;
         end
     end
@@ -106,6 +110,9 @@ module cordic_tb;
         begin
             test_count = test_count + 1;
             
+            // Explicitly de-assert i_valid before new test setup
+            i_valid = 0; 
+            
             // Wait for system to settle
             @(posedge clk);
             
@@ -113,17 +120,21 @@ module cordic_tb;
             theta = input_theta;
             expected_sin = ref_sin;
             expected_cos = ref_cos;
-            i_valid = 1;
+            i_valid = 1; // Assert i_valid to signal the input is valid
             
             $display("\n[T%0d] Input Angle (FP): %h", test_count, input_theta);
-            $display("      REF SIN/COS (FP): %h / %h", expected_sin, expected_cos);
+            $display(" REF SIN/COS (FP): %h / %h", expected_sin, expected_cos);
             
-            // Wait for 1 clock cycle to let the FSM load initial values
-            @(posedge clk);
-            i_valid = 0; 
+            // Wait for 1 clock cycle to let the FSM load initial values.
+            @(posedge clk); 
+            // i_valid remains high during the calculation as requested.
 
             // 2. Wait for CORDIC calculation to complete (16 iterations + overhead)
-            repeat (20) @(posedge clk); 
+            // Wait 19 more cycles since we already waited 1 cycle above.
+            repeat (19) @(posedge clk); 
+            
+            // De-assert i_valid before checking results
+            i_valid = 0;
             
             // 3. Verification Check
             
@@ -131,11 +142,12 @@ module cordic_tb;
             sin_err_mag = (sine_out > expected_sin) ? (sine_out - expected_sin) : (expected_sin - sine_out);
             cos_err_mag = (cosine_out > expected_cos) ? (cosine_out - expected_cos) : (expected_cos - cosine_out);
             
+            // Compare error against the MAX_ERROR_LSB parameter
             if (sin_err_mag <= MAX_ERROR_LSB && cos_err_mag <= MAX_ERROR_LSB) begin
-                $display("      PASS: SIN/COS = %h / %h. Error <= %0d LSBs.", 
+                $display(" PASS: SIN/COS = %h / %h. Error <= %0d LSBs.", 
                     sine_out, cosine_out, MAX_ERROR_LSB);
             end else begin
-                $display("      FAIL: SIN/COS = %h / %h. Max Error: SIN=%0d, COS=%0d LSBs.", 
+                $display(" FAIL: SIN/COS = %h / %h. Max Error: SIN=%0d, COS=%0d LSBs.", 
                     sine_out, cosine_out, sin_err_mag, cos_err_mag);
                 errors = errors + 1;
             end

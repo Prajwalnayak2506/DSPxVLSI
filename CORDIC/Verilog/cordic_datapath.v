@@ -53,15 +53,19 @@ assign next_state[0] = ((done) & ~current_state[0] & current_state[1]) | (i_vali
 
 // CORDIC Direction Decision (Sigma)
 // Corrected logic: If Z is positive (MSB=0), sigma is 1 (Subtract alpha_i)
-assign sigma = ~z_reg[15];
-assign sigma_bar = z_reg[15]; // NOT sigma
+assign sigma = z_reg[15];
+assign sigma_bar = ~z_reg[15]; // NOT sigma
 
 // Shifted Values
 wire signed [15:0] shifted_y = y_reg >>> i;
 wire signed [15:0] shifted_x = x_reg >>> i;
-
+wire signed [15:0] not_shifted_x;
+wire signed [15:0] not_shifted_y;
+wire signed [15:0] alpha_not;
+wire signed [15:0] yb;
+wire signed [15:0] xb;
+wire signed [15:0] alpha_signed;
 // --- Module Instantiations (Your existing blocks) ---
-
 quadrant_mapper qm1 (
     .angle_in(theta), 
     .Z_init(Z_init), 
@@ -70,6 +74,7 @@ quadrant_mapper qm1 (
     .flip_X_out(sin_sign), 
     .flip_Y_out(cos_sign)
 );
+
 cordic_counter counter1 (
     .clk(clk),
     .rst_n(resetter),
@@ -81,27 +86,31 @@ cordic_constants consts (
     .i(i),
     .alpha_i(alpha_value)
 );
-
+assign not_shifted_x = ~shifted_x;
+assign not_shifted_y = ~shifted_y;
+assign alpha_not = ~alpha_i;
+assign yb = (sigma & not_shifted_y) | (sigma_bar & shifted_y);
+assign xb = (sigma & shifted_x) | (sigma_bar & not_shifted_x);
 // --- Kogge-Stone Adder Instantiations (Your logic) ---
 // X-UPDATE (x_reg +/- shifted_y)
-wire [15:0] x_add_sum;
-kogge_stone_16bit ksa_x_add (.A(x_reg), .B(shifted_y), .CIN(1'b0), .Y(x_add_sum), .COUT());
-wire [15:0] x_sub_sum;
-kogge_stone_16bit ksa_x_sub (.A(x_reg), .B(~shifted_y), .CIN(1'b1), .Y(x_sub_sum), .COUT());
-assign x_next = (sigma & x_sub_sum) | (sigma_bar & x_add_sum);
-
+// wire [15:0] x_add_sum;
+// kogge_stone_16bit ksa_x_add (.A(x_reg), .B(shifted_y), .CIN(1'b0), .Y(x_add_sum), .COUT());
+// wire [15:0] x_sub_sum;
+kogge_stone_16bit ksa_x (.A(x_reg), .B(yb), .CIN(sigma), .Y(x_next), .COUT());
 // Y-UPDATE (y_reg -/+ shifted_x)
-wire [15:0] y_add_sum;
-kogge_stone_16bit ksa_y_add (.A(y_reg), .B(shifted_x), .CIN(1'b0), .Y(y_add_sum), .COUT());
-wire [15:0] y_sub_sum;
-kogge_stone_16bit ksa_y_sub (.A(y_reg), .B(~shifted_x), .CIN(1'b1), .Y(y_sub_sum), .COUT());
-assign y_next = (sigma & y_add_sum) | (sigma_bar & y_sub_sum);
+// wire [15:0] y_add_sum;
+// kogge_stone_16bit ksa_y_add (.A(y_reg), .B(shifted_x), .CIN(1'b0), .Y(y_add_sum), .COUT());
+// wire [15:0] y_sub_sum;
+// kogge_stone_16bit ksa_y_sub (.A(y_reg), .B(~shifted_x), .CIN(1'b1), .Y(y_sub_sum), .COUT());
+kogge_stone_16bit ksa_y (.A(y_reg), .B(xb), .CIN(sigma_bar), .Y(y_next), .COUT());
 
 // Z-UPDATE (z_reg +/- alpha_value)
-wire [15:0] z_sub_sum;
-kogge_stone_16bit ksa_z_sub (.A(z_reg), .B(~alpha_value), .CIN(1'b1), .Y(z_sub_sum), .COUT());
-wire [15:0] z_add_sum;
-kogge_stone_16bit ksa_z_add (.A(z_reg), .B(alpha_value), .CIN(1'b0), .Y(z_add_sum), .COUT());
+// wire [15:0] z_sub_sum;
+// kogge_stone_16bit ksa_z_sub (.A(z_reg), .B(~alpha_value), .CIN(1'b1), .Y(z_sub_sum), .COUT());
+// wire [15:0] z_add_sum;
+// kogge_stone_16bit ksa_z_add (.A(z_reg), .B(alpha_value), .CIN(1'b0), .Y(z_add_sum), .COUT());
+alpha_signed 
+kogge_stone_16bit ksa_z (.A(z_reg), .B(yb), .CIN(sigma), .Y(x_next), .COUT());
 assign z_next = (sigma & z_sub_sum) | (sigma_bar & z_add_sum);
 
 // --- Sequential Logic Blocks ---

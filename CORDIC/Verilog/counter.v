@@ -11,10 +11,9 @@ wire next_count_0, next_count_1, next_count_2, next_count_3;
 assign done = (iteration_count == MAX_COUNT) && counting_active;
 assign next_count_0 = ~iteration_count[0];
 assign next_count_1 = iteration_count[0] ^ iteration_count[1];
-assign next_count_2 = ((~iteration_count[3]) & (~iteration_count[2]) & (iteration_count[1]) & iteration_count[0])
-                    | (~iteration_count[0] & iteration_count[2])
+assign next_count_2 = (~iteration_count[0] & iteration_count[2] & iteration_count[1])
                     | (~iteration_count[1] & iteration_count[2])
-                    | (~iteration_count[1] & iteration_count[0] & iteration_count[3]);
+                    | (~iteration_count[2] & iteration_count[1] & iteration_count[0]);
 assign next_count_3 = ((~iteration_count[3]) & (iteration_count[2]) & (iteration_count[1]) & iteration_count[0])
                     | (~iteration_count[0] & iteration_count[3])
                     | (~iteration_count[1] & iteration_count[3])

@@ -75,7 +75,7 @@ module cordic_tb; // Renamed module to cordic_tb for standard practice
         
         // Run and Display First 5 Iterations
         // The display statement uses the hierarchically linked signals (_h suffix)
-        repeat (25) begin
+        repeat (20) begin
             $display("%5d | %5b | %1h | %4h | %4h | %4h", 
                      $time/CLK_PERIOD, current_state_h, i_h, x_reg_h, y_reg_h, z_reg_h);
             @(posedge clk);

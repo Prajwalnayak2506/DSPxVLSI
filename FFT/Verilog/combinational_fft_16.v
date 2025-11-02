@@ -10,7 +10,6 @@ wire signed [15:0] Y_S1_R [0:15];
 wire signed [15:0] Y_S1_I [0:15];
 wire signed [15:0] X_S1_R [0:15]; 
 wire signed [15:0] X_S1_I [0:15];
-// --- STAGE 1: 8 Butterflies (i=0 to 7) ---
 generate
     genvar i;
     for (i = 0; i < 8; i = i + 1) begin : stage1_trivial_gen
